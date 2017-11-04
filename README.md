@@ -11,6 +11,21 @@ This is a data-modelling reference project elaborated by the students step-by-st
 ## Physical Data Model
 ![](modelling/images/WE-CRM-PM.jpg)
 
+```SQL
+CREATE TABLE Agent (
+  ID       INTEGER NOT NULL PRIMARY KEY, 
+  Name     varchar(255) NOT NULL, 
+  Email    varchar(255) NOT NULL, 
+  Password varchar(255) NOT NULL);
+CREATE TABLE Customer (
+  ID      INTEGER NOT NULL PRIMARY KEY, 
+  Name    varchar(255) NOT NULL, 
+  Email   varchar(255) NOT NULL, 
+  Mobile  varchar(255) NOT NULL, 
+  AgentID integer(10) NOT NULL, 
+FOREIGN KEY(AgentID) REFERENCES Agent(ID));
+```
+
 ## Maintainer
 
 - [Andreas Martin](https://github.com/andreasmartin)
